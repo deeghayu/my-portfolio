@@ -1,12 +1,57 @@
-body {
-    background-color: #050505;
-    color: white;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: sans-serif;
+/* මූලික පසුබිම */
+body { 
+    margin: 0; 
+    background: #050505; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    color: white; 
+    font-family: 'Segoe UI', sans-serif; 
 }
-.content { text-align: center; }
-h1 { font-size: 3rem; color: #00ffff; }
+
+.container { text-align: center; padding: 20px; }
+
+/* 3D Heart ඇනිමේෂන් එක */
+.heart {
+    width: 100px; 
+    height: 100px;
+    background: #ff4d6d;
+    position: relative;
+    margin: 0 auto 50px auto;
+    transform: rotate(-45deg);
+    animation: beat 1.5s infinite;
+    box-shadow: 0 0 40px #ff4d6d;
+}
+
+.heart::before, .heart::after {
+    content: ""; 
+    width: 100px; 
+    height: 100px;
+    background: #ff4d6d;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before { top: -50px; left: 0; }
+.heart::after { top: 0; left: 50px; }
+
+@keyframes beat {
+    0% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-45deg) scale(1.2); }
+    100% { transform: rotate(-45deg) scale(1); }
+}
+
+/* මැසේජ් එකේ ලස්සන */
+h1 { font-size: 3rem; color: #ff4d6d; text-shadow: 0 0 15px #ff4d6d; margin-bottom: 10px; }
+p { font-size: 1.2rem; color: #ccc; }
+
+.message-box {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 77, 109, 0.3);
+    max-width: 400px;
+}
