@@ -1,57 +1,54 @@
-/* මූලික පසුබිම */
-body { 
-    margin: 0; 
-    background: #050505; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
-    color: white; 
-    font-family: 'Segoe UI', sans-serif; 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Great+Vibes&display=swap');
+
+body { margin: 0; background: #050505; color: white; overflow-x: hidden; font-family: 'Dancing Script', cursive; }
+
+/* 1. Hero Section */
+.hero { 
+    height: 100vh; display: flex; flex-direction: column; 
+    justify-content: center; align-items: center; text-align: center;
+    background: radial-gradient(circle, #1a000a, #050505);
 }
 
-.container { text-align: center; padding: 20px; }
-
-/* 3D Heart ඇනිමේෂන් එක */
 .heart {
-    width: 100px; 
-    height: 100px;
-    background: #ff4d6d;
-    position: relative;
-    margin: 0 auto 50px auto;
-    transform: rotate(-45deg);
-    animation: beat 1.5s infinite;
-    box-shadow: 0 0 40px #ff4d6d;
+    width: 80px; height: 80px; background: #ff4d6d;
+    position: relative; margin-bottom: 40px; transform: rotate(-45deg);
+    animation: beat 1.5s infinite; box-shadow: 0 0 40px #ff4d6d;
 }
+.heart::before, .heart::after { content: ""; width: 80px; height: 80px; background: #ff4d6d; border-radius: 50%; position: absolute; }
+.heart::before { top: -40px; left: 0; }
+.heart::after { top: 0; left: 40px; }
 
-.heart::before, .heart::after {
-    content: ""; 
-    width: 100px; 
-    height: 100px;
-    background: #ff4d6d;
-    border-radius: 50%;
-    position: absolute;
-}
+h1 { font-size: 3.5rem; color: #ff4d6d; text-shadow: 0 0 20px #ff4d6d; margin: 10px 0; }
+.main-msg { font-size: 1.4rem; color: #ccc; max-width: 600px; padding: 0 20px; line-height: 1.6; }
 
-.heart::before { top: -50px; left: 0; }
-.heart::after { top: 0; left: 50px; }
-
-@keyframes beat {
-    0% { transform: rotate(-45deg) scale(1); }
-    50% { transform: rotate(-45deg) scale(1.2); }
-    100% { transform: rotate(-45deg) scale(1); }
-}
-
-/* මැසේජ් එකේ ලස්සන */
-h1 { font-size: 3rem; color: #ff4d6d; text-shadow: 0 0 15px #ff4d6d; margin-bottom: 10px; }
-p { font-size: 1.2rem; color: #ccc; }
-
-.message-box {
-    margin-top: 30px;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 20px;
-    border-radius: 15px;
+/* 2. Signature Tab (අත්සන් සහිත කොටස) */
+.signature-tab {
+    margin-top: 40px; background: rgba(255, 255, 255, 0.05);
+    padding: 20px 40px; border-radius: 50px; display: flex;
+    align-items: center; gap: 20px; border: 1px solid rgba(255, 77, 109, 0.3);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 77, 109, 0.3);
-    max-width: 400px;
 }
+.sign { display: flex; flex-direction: column; align-items: center; }
+.name { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: #ffd700; }
+.line { width: 80px; height: 1px; background: #ff4d6d; margin-top: -5px; }
+.plus { font-size: 1.5rem; color: #ff4d6d; font-weight: bold; }
+
+.scroll-hint { margin-top: 30px; color: #666; font-size: 1rem; }
+
+/* 3. Scrapbook Section */
+.scrapbook { 
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 60px; padding: 100px 40px; background: #0f0f0f;
+}
+
+.photo-card { 
+    background: #222; padding: 20px; border: 1px solid #333; 
+    box-shadow: 15px 15px 30px rgba(0,0,0,0.7); transform: rotate(-2deg); 
+    transition: 0.5s;
+}
+.photo-card:hover { transform: rotate(0deg) scale(1.05); border-color: #ff4d6d; }
+.photo-card img { width: 100%; border: 10px solid white; filter: contrast(1.1); }
+.dual-photo { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.photo-card p { font-size: 1.8rem; color: #ffd700; margin-top: 15px; }
+
+@keyframes beat { 0%, 100% { transform: rotate(-45deg) scale(1); } 50% { transform: rotate(-45deg) scale(1.15); } }
