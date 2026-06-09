@@ -28,15 +28,18 @@
         <div class="photo-card" data-aos="fade-up"><img src="p1.jpg"><p>Our First Date!</p></div>
         <div class="photo-card" data-aos="fade-up"><img src="p2.jpg"><p>Good Times</p></div>
         <div class="photo-card" data-aos="fade-up"><img src="p3.jpg"><p>Forever Yours</p></div>
-        <div class="photo-card" data-aos="fade-up"><img src="p3.jpg"><p>I LOVE YOU </p></div>
+        <div class="photo-card" data-aos="fade-up"><img src="p3.jpg"><p>I LOVE YOU</p></div>
     </div>
 
-    <div class="gallery-section">
+    <div class="heart-gallery">
         <h2>Our Gallery</h2>
-        <div class="gallery-grid">
-            <img src="g1.jpg" onclick="openFull(this.src)">
-            <img src="g2.jpg" onclick="openFull(this.src)">
-            <img src="g3.jpg" onclick="openFull(this.src)">
+        <div class="heart-collage">
+            <img src="g1.jpg" class="h-img" onclick="openFull(this.src)">
+            <img src="g2.jpg" class="h-img" onclick="openFull(this.src)">
+            <img src="g3.jpg" class="h-img" onclick="openFull(this.src)">
+            <img src="g4.jpg" class="h-img" onclick="openFull(this.src)">
+            <img src="g5.jpg" class="h-img" onclick="openFull(this.src)">
+            <img src="g6.jpg" class="h-img" onclick="openFull(this.src)">
         </div>
     </div>
 
@@ -46,7 +49,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({duration: 1000});
-        particlesJS("particles-js", {"particles":{"number":{"value":50},"color":{"value":"#ff4d6d"},"shape":{"type":"circle"},"opacity":{"value":0.5}}});
+        particlesJS("particles-js", {"particles":{"number":{"value":50},"color":{"value":"#ff4d6d"},"shape":{"type":"circle"}}});
         function openFull(pic){ document.getElementById("fullImg").src=pic; document.getElementById("fullBox").style.display="flex"; }
         function closeFull(){ document.getElementById("fullBox").style.display="none"; }
     </script>
