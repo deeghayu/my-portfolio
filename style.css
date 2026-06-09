@@ -3,14 +3,14 @@
 body { margin: 0; background: #050505; color: white; font-family: 'Dancing Script', cursive; overflow-x: hidden; }
 #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
 
-.hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
+.hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
 .heart { width: 60px; height: 60px; background: #ff4d6d; transform: rotate(-45deg); animation: beat 1.5s infinite; margin-bottom: 20px; }
 .heart::before, .heart::after { content: ""; width: 60px; height: 60px; background: #ff4d6d; border-radius: 50%; position: absolute; }
 .heart::before { top: -30px; left: 0; }
 .heart::after { top: 0; left: 30px; }
 
 h1 { font-size: 2.5rem; color: #ff4d6d; }
-.love-tab { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 20px; backdrop-filter: blur(10px); border: 1px solid #ff4d6d33; margin-top: 20px; }
+.love-tab { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 20px; backdrop-filter: blur(10px); border: 1px solid #ff4d6d33; margin: 20px; }
 .couple { display: flex; align-items: center; gap: 20px; }
 .pic { width: 70px; height: 70px; border-radius: 50%; border: 2px solid #ff4d6d; overflow: hidden; }
 .pic img { width: 100%; height: 100%; object-fit: cover; }
@@ -20,11 +20,11 @@ h1 { font-size: 2.5rem; color: #ff4d6d; }
 .photo-card { background: #1a1a1a; padding: 15px; margin-bottom: 40px; transform: rotate(-2deg); box-shadow: 10px 10px 20px rgba(0,0,0,0.5); }
 .photo-card img { width: 100%; border: 5px solid white; }
 
-.gallery-section { padding: 50px 20px; text-align: center; }
-.gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.gallery-grid img { width: 100%; height: 150px; object-fit: cover; cursor: pointer; border: 2px solid #333; }
+.heart-gallery { padding: 50px 20px; text-align: center; }
+.heart-collage { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 500px; margin: 0 auto; }
+.h-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; cursor: pointer; clip-path: path('M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'); }
 
-#fullBox { position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.9); display:none; align-items:center; justify-content:center; }
-#fullBox img { max-width: 90%; }
+#fullBox { position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.9); display:none; align-items:center; justify-content:center; z-index: 999; }
+#fullBox img { max-width: 90%; max-height: 80%; }
 
 @keyframes beat { 0%, 100% { transform: rotate(-45deg) scale(1); } 50% { transform: rotate(-45deg) scale(1.1); } }
