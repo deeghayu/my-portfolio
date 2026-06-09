@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -8,27 +11,46 @@
 
     <div class="hero">
         <div class="heart"></div>
-        <h1>Happy Anniversary!</h1>
-        <p>You mean the world to me.</p>
-        <span class="scroll-down">Scroll down to see our memories ↓</span>
+        <h1 data-aos="zoom-in">Happy Anniversary!</h1>
+        <p class="main-msg" data-aos="fade-up">
+            "අපේ ආදරේ මේ ගතවුණු හැම තත්පරයක්ම මට ගොඩක් විශේෂයි. <br>
+            ඔයා මගේ ජීවිතේට ආපු එක මම ලබපු ලොකුම වාසනාව."
+        </p>
+
+        <div class="signature-tab" data-aos="flip-up">
+            <div class="sign">
+                <span class="name">Sandun</span> <div class="line"></div>
+            </div>
+            <div class="plus">+</div>
+            <div class="sign">
+                <span class="name">Kavindi</span> <div class="line"></div>
+            </div>
+        </div>
+        
+        <div class="scroll-hint">Scroll down for our scrapbook ↓</div>
     </div>
 
     <div class="scrapbook">
-        <div class="photo-card" data-aos="fade-up">
-            <img src="p1.jpg" alt="Memory">
-            <p>Our First Date! ❤️</p>
+        <div class="photo-card" data-aos="fade-right">
+            <img src="p1.jpg" alt="Memory 1">
+            <p>එදා අපේ පලවෙනි හමුවීම... ❤️</p>
         </div>
-        <div class="photo-card" data-aos="fade-up">
-            <img src="p2.jpg" alt="Memory">
-            <p>Good Times!</p>
+
+        <div class="photo-card" data-aos="fade-left">
+            <div class="dual-photo">
+                <img src="p2.jpg" alt="Memory 2">
+                <img src="p3.jpg" alt="Memory 3">
+            </div>
+            <p>අමතක නොවන මතකයන්</p>
         </div>
-        <div class="photo-card" data-aos="fade-up">
-            <img src="p3.jpg" alt="Memory">
-            <p>Forever Together</p>
+
+        <div class="photo-card" data-aos="zoom-in">
+            <img src="p4.jpg" alt="Memory 4">
+            <p>හැමදාමත් මාත් එක්කම ඉන්න!</p>
         </div>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000 });</script>
+    <script>AOS.init({ duration: 1500 });</script>
 </body>
 </html>
