@@ -1,62 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Great+Vibes&display=swap');
 
-body { margin: 0; background: #050505; color: white; overflow-x: hidden; font-family: 'Dancing Script', cursive; }
+body { margin: 0; background: #050505; color: white; font-family: 'Dancing Script', cursive; overflow-x: hidden; }
 
-/* 3D Heart Animation */
-.hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: radial-gradient(circle, #1a000a, #050505); }
-.heart { width: 70px; height: 70px; background: #ff4d6d; position: relative; margin-bottom: 30px; transform: rotate(-45deg); animation: beat 1.5s infinite; box-shadow: 0 0 30px #ff4d6d; }
-.heart::before, .heart::after { content: ""; width: 70px; height: 70px; background: #ff4d6d; border-radius: 50%; position: absolute; }
-.heart::before { top: -35px; left: 0; }
-.heart::after { top: 0; left: 35px; }
+#particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
 
-h1 { font-size: 3rem; color: #ff4d6d; text-shadow: 0 0 20px #ff4d6d; }
-.main-msg { font-size: 1.2rem; color: #ccc; max-width: 500px; line-height: 1.5; }
+.hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
+.heart { width: 60px; height: 60px; background: #ff4d6d; transform: rotate(-45deg); animation: beat 1.5s infinite; margin-bottom: 20px; }
+.heart::before, .heart::after { content: ""; width: 60px; height: 60px; background: #ff4d6d; border-radius: 50%; position: absolute; }
+.heart::before { top: -30px; left: 0; }
+.heart::after { top: 0; left: 30px; }
 
-/* Love Tab Styling */
-.love-tab {
-    margin-top: 30px;
-    background: rgba(255, 255, 255, 0.07);
-    padding: 30px 50px;
-    border-radius: 30px;
-    border: 1px solid rgba(255, 77, 109, 0.3);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
+h1 { font-size: 2.5rem; color: #ff4d6d; margin: 10px 0; }
+.msg { font-size: 1.1rem; color: #eee; margin-bottom: 30px; }
 
-.couple-profile { display: flex; align-items: center; gap: 40px; }
+.love-tab { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 20px; backdrop-filter: blur(10px); border: 1px solid #ff4d6d33; }
+.couple { display: flex; align-items: center; gap: 20px; }
+.pic { width: 70px; height: 70px; border-radius: 50%; border: 2px solid #ff4d6d; overflow: hidden; }
+.pic img { width: 100%; height: 100%; object-fit: cover; }
+.sign { font-family: 'Great Vibes'; font-size: 1.5rem; color: #ffd700; display: block; margin-top: 5px; }
 
-.person { display: flex; flex-direction: column; align-items: center; }
+.scrapbook { padding: 40px 20px; }
+.photo-card { background: #1a1a1a; padding: 15px; margin-bottom: 40px; border: 1px solid #333; transform: rotate(-2deg); box-shadow: 10px 10px 20px rgba(0,0,0,0.5); }
+.photo-card img { width: 100%; border: 5px solid white; }
+.photo-card p { font-size: 1.5rem; color: #ffd700; margin-top: 10px; }
 
-.profile-pic {
-    width: 100px; height: 100px;
-    border-radius: 50%;
-    border: 3px solid #ff4d6d;
-    overflow: hidden;
-    margin-bottom: 15px;
-    box-shadow: 0 0 15px rgba(255, 77, 109, 0.5);
-}
-
-.profile-pic img { width: 100%; height: 100%; object-fit: cover; }
-
-.signature {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.5rem;
-    color: #ffd700;
-    margin-bottom: -5px;
-}
-
-.line { width: 100px; height: 1px; background: #ff4d6d; }
-
-.heart-icon { font-size: 2.5rem; animation: pulse 1s infinite; color: #ff4d6d; }
-
-/* Scrapbook */
-.scrapbook { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; padding: 100px 40px; background: #111; }
-.photo-card { background: #222; padding: 20px; border: 1px solid #333; transform: rotate(-2deg); transition: 0.5s; box-shadow: 10px 10px 25px rgba(0,0,0,0.8); }
-.photo-card:hover { transform: rotate(0deg) scale(1.05); border-color: #ff4d6d; }
-.photo-card img { width: 100%; border: 8px solid white; }
-.photo-card p { font-size: 1.8rem; color: #ffd700; margin-top: 15px; }
-.dual-photo { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-
-/* Animations */
 @keyframes beat { 0%, 100% { transform: rotate(-45deg) scale(1); } 50% { transform: rotate(-45deg) scale(1.1); } }
-@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
