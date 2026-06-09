@@ -2,53 +2,61 @@
 
 body { margin: 0; background: #050505; color: white; overflow-x: hidden; font-family: 'Dancing Script', cursive; }
 
-/* 1. Hero Section */
-.hero { 
-    height: 100vh; display: flex; flex-direction: column; 
-    justify-content: center; align-items: center; text-align: center;
-    background: radial-gradient(circle, #1a000a, #050505);
+/* 3D Heart Animation */
+.hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: radial-gradient(circle, #1a000a, #050505); }
+.heart { width: 70px; height: 70px; background: #ff4d6d; position: relative; margin-bottom: 30px; transform: rotate(-45deg); animation: beat 1.5s infinite; box-shadow: 0 0 30px #ff4d6d; }
+.heart::before, .heart::after { content: ""; width: 70px; height: 70px; background: #ff4d6d; border-radius: 50%; position: absolute; }
+.heart::before { top: -35px; left: 0; }
+.heart::after { top: 0; left: 35px; }
+
+h1 { font-size: 3rem; color: #ff4d6d; text-shadow: 0 0 20px #ff4d6d; }
+.main-msg { font-size: 1.2rem; color: #ccc; max-width: 500px; line-height: 1.5; }
+
+/* Love Tab Styling */
+.love-tab {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.07);
+    padding: 30px 50px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 77, 109, 0.3);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.heart {
-    width: 80px; height: 80px; background: #ff4d6d;
-    position: relative; margin-bottom: 40px; transform: rotate(-45deg);
-    animation: beat 1.5s infinite; box-shadow: 0 0 40px #ff4d6d;
-}
-.heart::before, .heart::after { content: ""; width: 80px; height: 80px; background: #ff4d6d; border-radius: 50%; position: absolute; }
-.heart::before { top: -40px; left: 0; }
-.heart::after { top: 0; left: 40px; }
+.couple-profile { display: flex; align-items: center; gap: 40px; }
 
-h1 { font-size: 3.5rem; color: #ff4d6d; text-shadow: 0 0 20px #ff4d6d; margin: 10px 0; }
-.main-msg { font-size: 1.4rem; color: #ccc; max-width: 600px; padding: 0 20px; line-height: 1.6; }
+.person { display: flex; flex-direction: column; align-items: center; }
 
-/* 2. Signature Tab (අත්සන් සහිත කොටස) */
-.signature-tab {
-    margin-top: 40px; background: rgba(255, 255, 255, 0.05);
-    padding: 20px 40px; border-radius: 50px; display: flex;
-    align-items: center; gap: 20px; border: 1px solid rgba(255, 77, 109, 0.3);
-    backdrop-filter: blur(10px);
-}
-.sign { display: flex; flex-direction: column; align-items: center; }
-.name { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: #ffd700; }
-.line { width: 80px; height: 1px; background: #ff4d6d; margin-top: -5px; }
-.plus { font-size: 1.5rem; color: #ff4d6d; font-weight: bold; }
-
-.scroll-hint { margin-top: 30px; color: #666; font-size: 1rem; }
-
-/* 3. Scrapbook Section */
-.scrapbook { 
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-    gap: 60px; padding: 100px 40px; background: #0f0f0f;
+.profile-pic {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    border: 3px solid #ff4d6d;
+    overflow: hidden;
+    margin-bottom: 15px;
+    box-shadow: 0 0 15px rgba(255, 77, 109, 0.5);
 }
 
-.photo-card { 
-    background: #222; padding: 20px; border: 1px solid #333; 
-    box-shadow: 15px 15px 30px rgba(0,0,0,0.7); transform: rotate(-2deg); 
-    transition: 0.5s;
+.profile-pic img { width: 100%; height: 100%; object-fit: cover; }
+
+.signature {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: #ffd700;
+    margin-bottom: -5px;
 }
+
+.line { width: 100px; height: 1px; background: #ff4d6d; }
+
+.heart-icon { font-size: 2.5rem; animation: pulse 1s infinite; color: #ff4d6d; }
+
+/* Scrapbook */
+.scrapbook { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; padding: 100px 40px; background: #111; }
+.photo-card { background: #222; padding: 20px; border: 1px solid #333; transform: rotate(-2deg); transition: 0.5s; box-shadow: 10px 10px 25px rgba(0,0,0,0.8); }
 .photo-card:hover { transform: rotate(0deg) scale(1.05); border-color: #ff4d6d; }
-.photo-card img { width: 100%; border: 10px solid white; filter: contrast(1.1); }
-.dual-photo { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.photo-card img { width: 100%; border: 8px solid white; }
 .photo-card p { font-size: 1.8rem; color: #ffd700; margin-top: 15px; }
+.dual-photo { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 
-@keyframes beat { 0%, 100% { transform: rotate(-45deg) scale(1); } 50% { transform: rotate(-45deg) scale(1.15); } }
+/* Animations */
+@keyframes beat { 0%, 100% { transform: rotate(-45deg) scale(1); } 50% { transform: rotate(-45deg) scale(1.1); } }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
