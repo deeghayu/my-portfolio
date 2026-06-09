@@ -21,7 +21,6 @@
                 <div class="heart-icon">❤️</div>
                 <div class="person"><div class="pic"><img src="girl.jpg"></div><span class="sign">Kavindi</span></div>
             </div>
-            <div class="line"></div>
         </div>
     </div>
 
@@ -31,11 +30,24 @@
         <div class="photo-card" data-aos="fade-up"><img src="p3.jpg"><p>Forever Yours</p></div>
     </div>
 
+    <div class="gallery-section">
+        <h2>Our Gallery</h2>
+        <div class="gallery-grid">
+            <img src="g1.jpg" onclick="openFull(this.src)">
+            <img src="g2.jpg" onclick="openFull(this.src)">
+            <img src="g3.jpg" onclick="openFull(this.src)">
+        </div>
+    </div>
+
+    <div id="fullBox" onclick="closeFull()"><img id="fullImg"></div>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({duration: 1000});
-        particlesJS("particles-js", {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},"color":{"value":"#ff4d6d"},"shape":{"type":"circle"},"opacity":{"value":0.5}}});
+        particlesJS("particles-js", {"particles":{"number":{"value":50},"color":{"value":"#ff4d6d"},"shape":{"type":"circle"},"opacity":{"value":0.5}}});
+        function openFull(pic){ document.getElementById("fullImg").src=pic; document.getElementById("fullBox").style.display="flex"; }
+        function closeFull(){ document.getElementById("fullBox").style.display="none"; }
     </script>
 </body>
 </html>
