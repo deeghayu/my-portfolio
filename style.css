@@ -1,0 +1,12 @@
+body {
+    background-color: #050505;
+    color: white;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: sans-serif;
+}
+.content { text-align: center; }
+h1 { font-size: 3rem; color: #00ffff; }
